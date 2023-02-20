@@ -45,13 +45,29 @@
             <div class="card mt-4 vh-100">
                 <div class="card-body">
 
-                <h4 class="mt-2">REKAP EVIDEN POIN BULAN X TAHUN 20XX</h4>
+                <h4 class="mt-2">REKAP EVIDEN POIN PER-BULAN  TAHUN 2023</h4>
                 <div class="text-right">
                     <a href="/rekapdata" class="btn btn-danger ml-3" role="button" aria-pressed="true">Kembali</a>
                 </div>
 
+                <form>
                 <div class="input-group mt-2 mb-4">
-                    <input name="search" type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
+                    <select name="search" type="number" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
+                <option>Pilih Bulan</option>
+                <option value="01">Januari</option>
+                <option value="02">Febuari</option>
+                <option value="03">Maret</option>
+                <option value="04">April</option>
+                <option value="05">Mei</option>
+                <option value="06">Juni</option>
+                <option value="07">Juli</option>
+                <option value="08">Agustus</option>
+                <option value="09">September</option>
+                <option value="10">Oktober</option>
+                <option value="11">November</option>
+                <option value="12">Desember</option>
+</select>
+                    
                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Cari</button>
                 </div>
             </form>
@@ -67,23 +83,19 @@
                 <div class="scroll">
                 <table class="table table-bordered">
                 <thead>
-            <tr>
-                <th colspan="42">Tanggal 1 s.d. 31</th>
-            </tr>
 
-            <tr colspan="38">WILAYAH BARAT</tr>
-            <tr colspan="38">WILAYAH TIMUR</tr>
 
             <tr>
             <th rowspan="3">No.</th>
             <th rowspan="3">Nama</th>
             <th rowspan="3">Jabatan</th>
             <th colspan="31">POIN EVIDEN</th>
-            <th rowspan="3">TOTAL POIN EVIDEN</th>
+            <th rowspan="3">TOTAL JUMLAH</th>
             </tr>
-
-            <tr><th colspan="31">TANGGAL 1 S.D. 31 BULAN XX</th></tr>
-            
+            <tr>
+                <th colspan="31">Tanggal 1 s.d. 31</th>
+            </tr>
+            </tr>
             <tr>
                 <th>1</th>
                 <th>2</th>
@@ -93,8 +105,9 @@
                 <th>6</th>
                 <th>7</th>
                 <th>8</th>
-                <th>9</th>
+                
 
+                <th>9</th>
                 <th>10</th>
                 <th>11</th>
                 <th>12</th>
@@ -102,19 +115,21 @@
                 <th>14</th>
                 <th>15</th>
                 <th>16</th>
+                
+
                 <th>17</th>
                 <th>18</th>
-
                 <th>19</th>
                 <th>20</th>
                 <th>21</th>
                 <th>22</th>
                 <th>23</th>
                 <th>24</th>
+                
+
                 <th>25</th>
                 <th>26</th>
                 <th>27</th>
-
                 <th>28</th>
                 <th>29</th>
                 <th>30</th>
@@ -123,9 +138,93 @@
         </thead>
         <tbody>
 
+        @foreach ($datas1 as $no => $data1)
+        <tr>
+        <th scope="row">{{ ++$no }}</th>
         
+        <td>{{ $data1->nama }}</td>
+                <td>{{ $data1->jabatan }}</td>
+            
+                <td>{{ $data1->sum11 }}</td>
+                <td>{{ $data1->sum12 }}</td>
+                <td>{{ $data1->sum13 }}</td>
+                <td>{{ $data1->sum14 }}</td>
+                <td>{{ $data1->sum15 }}</td>
+                <td>{{ $data1->sum16 }}</td>
+                <td>{{ $data1->sum17 }}</td>
+                <td>{{ $data1->sum18 }}</td>
+                
 
-    </table>
+                <td>{{ $data1->sum21 }}</td>
+                <td>{{ $data1->sum22 }}</td>
+                <td>{{ $data1->sum23 }}</td>
+                <td>{{ $data1->sum24 }}</td>
+                <td>{{ $data1->sum25 }}</td>
+                <td>{{ $data1->sum26 }}</td>
+                <td>{{ $data1->sum27 }}</td>
+                <td>{{ $data1->sum28 }}</td>
+                
+
+                <td>{{ $data1->sum31 }}</td>
+                <td>{{ $data1->sum32 }}</td>
+                <td>{{ $data1->sum33 }}</td>
+                <td>{{ $data1->sum34 }}</td>
+                <td>{{ $data1->sum35 }}</td>
+                <td>{{ $data1->sum36 }}</td>
+                <td>{{ $data1->sum37 }}</td>
+                <td>{{ $data1->sum38 }}</td>
+                
+
+                <td>{{ $data1->sum41 }}</td>
+                <td>{{ $data1->sum42 }}</td>
+                <td>{{ $data1->sum43 }}</td>
+                <td>{{ $data1->sum44 }}</td>
+                <td>{{ $data1->sum45 }}</td>
+                <td>{{ $data1->sum46 }}</td>
+                <td>{{ $data1->sum47 }}</td>
+                
+                
+                <td>{{ $data1->total }}</td>
+                </tr>
+                @endforeach
+                </tbody>
+                <tr>
+                    <th colspan=3>JUMLAH</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+
+                    <th>{{ $data1->total }}</th>
+                </tr>
+            </table>
             </div>
             </div>
             </div>
@@ -134,4 +233,4 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-            </html>
+    </html>

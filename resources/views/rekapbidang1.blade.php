@@ -50,8 +50,24 @@
                     <a href="/rekapdata" class="btn btn-danger ml-3" role="button" aria-pressed="true">Kembali</a>
                 </div>
 
+                <form>
                 <div class="input-group mt-2 mb-4">
-                    <input name="search" type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
+                    <select name="search" type="number" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
+                <option>Pilih Bulan</option>
+                <option value="01">Januari</option>
+                <option value="02">Febuari</option>
+                <option value="03">Maret</option>
+                <option value="04">April</option>
+                <option value="05">Mei</option>
+                <option value="06">Juni</option>
+                <option value="07">Juli</option>
+                <option value="08">Agustus</option>
+                <option value="09">September</option>
+                <option value="10">Oktober</option>
+                <option value="11">November</option>
+                <option value="12">Desember</option>
+</select>
+                    
                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Cari</button>
                 </div>
             </form>
@@ -65,7 +81,7 @@
                 </style>
                 
                 <div class="scroll">
-                <table class="table table-bordered">
+                <table class="table table-bordered text-center">
         <thead>
             <tr>
                 <th colspan="42">Tanggal 1 s.d. 31</th>
@@ -128,7 +144,57 @@
         </thead>
         <tbody>
 
-        
+        @foreach ($datas1 as $no => $data1)
+            <tr>
+            <th scope="row">{{ ++$no }}</th>    
+            
+                <td>{{ $data1->nama }}</td>
+                <td>{{ $data1->jabatan }}</td>
+            
+                <td>{{ $data1->sum11 }}</td>
+                <td>{{ $data1->sum12 }}</td>
+                <td>{{ $data1->sum13 }}</td>
+                <td>{{ $data1->sum14 }}</td>
+                <td>{{ $data1->sum15 }}</td>
+                <td>{{ $data1->sum16 }}</td>
+                <td>{{ $data1->sum17 }}</td>
+                <td>{{ $data1->sum18 }}</td>
+                <td>{{ $data1->jum1 }}</td>
+
+                <td>{{ $data1->sum21 }}</td>
+                <td>{{ $data1->sum22 }}</td>
+                <td>{{ $data1->sum23 }}</td>
+                <td>{{ $data1->sum24 }}</td>
+                <td>{{ $data1->sum25 }}</td>
+                <td>{{ $data1->sum26 }}</td>
+                <td>{{ $data1->sum27 }}</td>
+                <td>{{ $data1->sum28 }}</td>
+                <td>{{ $data1->jum2 }}</td>
+
+                <td>{{ $data1->sum31 }}</td>
+                <td>{{ $data1->sum32 }}</td>
+                <td>{{ $data1->sum33 }}</td>
+                <td>{{ $data1->sum34 }}</td>
+                <td>{{ $data1->sum35 }}</td>
+                <td>{{ $data1->sum36 }}</td>
+                <td>{{ $data1->sum37 }}</td>
+                <td>{{ $data1->sum38 }}</td>
+                <td>{{ $data1->jum3 }}</td>
+
+                <td>{{ $data1->sum41 }}</td>
+                <td>{{ $data1->sum42 }}</td>
+                <td>{{ $data1->sum43 }}</td>
+                <td>{{ $data1->sum44 }}</td>
+                <td>{{ $data1->sum45 }}</td>
+                <td>{{ $data1->sum46 }}</td>
+                <td>{{ $data1->sum47 }}</td>
+                <td>{{ $data1->sum48 }}</td>
+                <td>{{ $data1->jum4 }}</td>
+                
+                    </tr>
+
+        @endforeach
+                </tbody>
 
     </table>
             </div>

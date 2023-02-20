@@ -50,13 +50,7 @@
                     <a href="/rekapdata" class="btn btn-danger ml-3" role="button" aria-pressed="true">Kembali</a>
                 </div>
 
-                <div class="container shadow py-2">
-                    <div class="input-group col-lg-3 col-sm-6 text-left">
-                    <input name="search" type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Cari</button>
-                </div>
-            </form>
-                </div>
+                
             
             <!-- buat scroll -->
             <style>
@@ -67,10 +61,15 @@
                 </style>
                 
                 <div class="scroll">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered text-center">
                         <thead>
                             <tr>
-                                <th colspan="42">TANGGAL 15</th>
+                            <form>
+                        <div class="input-group mt-2 mb-4">
+                            <input type="date" class="form-control" name="search" placeholder="search" aria-label="search" aria-describedby="button-addon2">
+                            <button class="btn btn-primary" type="submit" id="button-addon2">Cari</button>
+                        </div>
+                        </form>
                             </tr>
                             <tr colspan="38">WILAYAH BARAT</tr>
                             <tr colspan="38">WILAYAH TIMUR</tr>
@@ -134,49 +133,45 @@
             <td>{{ $data1->nama }}</td>
                 <td>{{ $data1->jabatan }}</td>
             
-            <td>{{ $data1->poin11 }}</td>
-                <td>{{ $data1->poin12 }}</td>
-                <td>{{ $data1->poin13 }}</td>
-                <td>{{ $data1->poin14 }}</td>
-                <td>{{ $data1->poin15 }}</td>
-                <td>{{ $data1->poin16 }}</td>
-                <td>{{ $data1->poin17 }}</td>
-                <td>{{ $data1->poin18 }}</td>
+                <td>{{ $data1->sum11 }}</td>
+                <td>{{ $data1->sum12 }}</td>
+                <td>{{ $data1->sum13 }}</td>
+                <td>{{ $data1->sum14 }}</td>
+                <td>{{ $data1->sum15 }}</td>
+                <td>{{ $data1->sum16 }}</td>
+                <td>{{ $data1->sum17 }}</td>
+                <td>{{ $data1->sum18 }}</td>
+                <td>{{ $data1->jum1 }}</td>
 
-                <td></td>
+                <td>{{ $data1->sum21 }}</td>
+                <td>{{ $data1->sum22 }}</td>
+                <td>{{ $data1->sum23 }}</td>
+                <td>{{ $data1->sum24 }}</td>
+                <td>{{ $data1->sum25 }}</td>
+                <td>{{ $data1->sum26 }}</td>
+                <td>{{ $data1->sum27 }}</td>
+                <td>{{ $data1->sum28 }}</td>
+                <td>{{ $data1->jum2 }}</td>
 
-                <td>{{ $data1->poin21 }}</td>
-                <td>{{ $data1->poin22 }}</td>
-                <td>{{ $data1->poin23 }}</td>
-                <td>{{ $data1->poin24 }}</td>
-                <td>{{ $data1->poin25 }}</td>
-                <td>{{ $data1->poin26 }}</td>
-                <td>{{ $data1->poin27 }}</td>
-                <td>{{ $data1->poin28 }}</td>
+                <td>{{ $data1->sum31 }}</td>
+                <td>{{ $data1->sum32 }}</td>
+                <td>{{ $data1->sum33 }}</td>
+                <td>{{ $data1->sum34 }}</td>
+                <td>{{ $data1->sum35 }}</td>
+                <td>{{ $data1->sum36 }}</td>
+                <td>{{ $data1->sum37 }}</td>
+                <td>{{ $data1->sum38 }}</td>
+                <td>{{ $data1->jum3 }}</td>
 
-                <td></td>
-
-                <td>{{ $data1->poin31 }}</td>
-                <td>{{ $data1->poin32 }}</td>
-                <td>{{ $data1->poin33 }}</td>
-                <td>{{ $data1->poin34 }}</td>
-                <td>{{ $data1->poin35 }}</td>
-                <td>{{ $data1->poin36 }}</td>
-                <td>{{ $data1->poin37 }}</td>
-                <td>{{ $data1->poin38 }}</td>
-
-                <td></td>
-
-                <td>{{ $data1->poin41 }}</td>
-                <td>{{ $data1->poin42 }}</td>
-                <td>{{ $data1->poin43 }}</td>
-                <td>{{ $data1->poin44 }}</td>
-                <td>{{ $data1->poin45 }}</td>
-                <td>{{ $data1->poin46 }}</td>
-                <td>{{ $data1->poin47 }}</td>
-                <td>{{ $data1->poin48 }}</td>
-
-                <td></td>
+                <td>{{ $data1->sum41 }}</td>
+                <td>{{ $data1->sum42 }}</td>
+                <td>{{ $data1->sum43 }}</td>
+                <td>{{ $data1->sum44 }}</td>
+                <td>{{ $data1->sum45 }}</td>
+                <td>{{ $data1->sum46 }}</td>
+                <td>{{ $data1->sum47 }}</td>
+                <td>{{ $data1->sum48 }}</td>
+                <td>{{ $data1->jum4 }}</td>
                     </tr>
                     @endforeach
                 </tbody>

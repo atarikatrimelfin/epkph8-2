@@ -27,48 +27,48 @@
         <label>Tanaman / Pemeliharaan / Persemaian</label></br>
         <input type="checkbox" name="poin11" value="1"> Shift 1</br>
         <input type="checkbox" name="poin12" value="1"> Shift 2</br>
-        <input type="checkbox" name="poin13" value="2"> Shift 3</br>
-        <input type="checkbox" name="poin14" value="2"> Shift 4</br>
-        <input type="checkbox" name="poin15" value="3"> Shift 5</br>
-        <input type="checkbox" name="poin16" value="3"> Shift 6</br>
-        <input type="checkbox" name="poin17" value="4"> Shift 7</br>
-        <input type="checkbox" name="poin18" value="4"> Shift 8</br>
+        <input type="checkbox" name="poin13" value="1"> Shift 3</br>
+        <input type="checkbox" name="poin14" value="1"> Shift 4</br>
+        <input type="checkbox" name="poin15" value="2"> Shift 5</br>
+        <input type="checkbox" name="poin16" value="2"> Shift 6</br>
+        <input type="checkbox" name="poin17" value="2"> Shift 7</br>
+        <input type="checkbox" name="poin18" value="2"> Shift 8</br>
 </div>
 
 <div class="mb-3">
         <label>Keamanan / Patroli</label></br>
         <input type="checkbox" name="poin21" value="1"> Shift 1</br>
         <input type="checkbox" name="poin22" value="1"> Shift 2</br>
-        <input type="checkbox" name="poin23" value="2"> Shift 3</br>
-        <input type="checkbox" name="poin24" value="2"> Shift 4</br>
-        <input type="checkbox" name="poin25" value="3"> Shift 5</br>
-        <input type="checkbox" name="poin26" value="3"> Shift 6</br>
-        <input type="checkbox" name="poin27" value="4"> Shift 7</br>
-        <input type="checkbox" name="poin28" value="4"> Shift 8</br>
+        <input type="checkbox" name="poin23" value="1"> Shift 3</br>
+        <input type="checkbox" name="poin24" value="1"> Shift 4</br>
+        <input type="checkbox" name="poin25" value="2"> Shift 5</br>
+        <input type="checkbox" name="poin26" value="2"> Shift 6</br>
+        <input type="checkbox" name="poin27" value="2"> Shift 7</br>
+        <input type="checkbox" name="poin28" value="2"> Shift 8</br>
 </div>
 
 <div class="mb-3">
         <label>Sosialisasi / Rapat / Apel</label></br>
         <input type="checkbox" name="poin31" value="1"> Shift 1</br>
         <input type="checkbox" name="poin32" value="1"> Shift 2</br>
-        <input type="checkbox" name="poin33" value="2"> Shift 3</br>
-        <input type="checkbox" name="poin34" value="2"> Shift 4</br>
-        <input type="checkbox" name="poin35" value="3"> Shift 5</br>
-        <input type="checkbox" name="poin36" value="3"> Shift 6</br>
-        <input type="checkbox" name="poin37" value="4"> Shift 7</br>
-        <input type="checkbox" name="poin38" value="4"> Shift 8</br>
+        <input type="checkbox" name="poin33" value="1"> Shift 3</br>
+        <input type="checkbox" name="poin34" value="1"> Shift 4</br>
+        <input type="checkbox" name="poin35" value="2"> Shift 5</br>
+        <input type="checkbox" name="poin36" value="2"> Shift 6</br>
+        <input type="checkbox" name="poin37" value="2"> Shift 7</br>
+        <input type="checkbox" name="poin38" value="2"> Shift 8</br>
 </div>
 
 <div class="mb-3">
         <label>Produksi / Agroforestry / Wisata</label></br>
         <input type="checkbox" name="poin41" value="1"> Shift 1</br>
         <input type="checkbox" name="poin42" value="1"> Shift 2</br>
-        <input type="checkbox" name="poin43" value="2"> Shift 3</br>
-        <input type="checkbox" name="poin44" value="2"> Shift 4</br>
-        <input type="checkbox" name="poin45" value="3"> Shift 5</br>
-        <input type="checkbox" name="poin46" value="3"> Shift 6</br>
-        <input type="checkbox" name="poin47" value="4"> Shift 7</br>
-        <input type="checkbox" name="poin48" value="4"> Shift 8</br>
+        <input type="checkbox" name="poin43" value="1"> Shift 3</br>
+        <input type="checkbox" name="poin44" value="1"> Shift 4</br>
+        <input type="checkbox" name="poin45" value="2"> Shift 5</br>
+        <input type="checkbox" name="poin46" value="2"> Shift 6</br>
+        <input type="checkbox" name="poin47" value="2"> Shift 7</br>
+        <input type="checkbox" name="poin48" value="2"> Shift 8</br>
 </div>
 
 
