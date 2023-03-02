@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Exports\RekapBidang1Export;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RekapBidang1Controller extends Controller 
 {
+    public function export(Request $request) 
+    {
+        return Excel::download(new RekapBidang1Export($request->search), 'rekapbidang1.xlsx');
+    }
+
     public function rekapbidang1(Request $request) 
     {
         if($request->has('search')){
@@ -21,7 +28,7 @@ class RekapBidang1Controller extends Controller
             WHERE MONTH(data_laporan.tanggal) = :search
             GROUP BY data_laporan.id, users.nama, users.id, users.wilayah, users.jabatan',
             ['search'=>$request->search]);
-        return view('rekapbidang1', ['key'=>'rekapbidang1'])
+        return view('rekap.rekapbidang1', ['key'=>'rekapbidang1'])
         ->with('datas1', $datas1);
         }
 
@@ -35,7 +42,7 @@ class RekapBidang1Controller extends Controller
             left join users on users.id = data_laporan.id
             GROUP BY data_laporan.id, users.nama, users.id, users.wilayah, users.jabatan');
         
-        return view('rekapbidang1', ['key'=>'rekapbidang1'])
+        return view('rekap.rekapbidang1', ['key'=>'rekapbidang1'])
         ->with('datas1', $datas1);
         }
     }

@@ -31,29 +31,33 @@
                             class="form-control" Required autocomplete="off">
                         </div>
                         <div class="form-group">
-                          <label for="">Email</label>
-                          <input type="email" name="email"
-                            class="form-control" autocomplete="off">
-                        </div>
-                        <div class="form-group">
                           <label for="">Jabatan</label>
                           <input type="jabatan" name="jabatan"
                             class="form-control" Required autocomplete="off">
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                           <label for="">Wilayah</label>
                           <input type="wilayah" name="wilayah"
                             class="form-control" Required autocomplete="off">
-                        </div>
+                        </div> --}}
+                        
                         <div class="form-group">
                           <label for="">Password</label>
                           <input type="password" name="password"
                             class="form-control" Required autocomplete="off">
                         </div>
+                        <div class="mb-3">
+                          <label for="wilayah" class="form-label">Wilayah</label>
+                          <select name="wilayah" class="form-control mb-3" id="wilayah" Required autocomplete="off">
+                            <option value="">Pilih Wilayah</option>
+                              <option value="WILAYAH BARAT">WILAYAH BARAT</option>
+                              <option value="WILAYAH TIMUR">WILAYAH TIMUR</option>
+                          </select>
+                          <div class="invalid-feedback">Wilayah Harus Dipilih!</div>
+                          </div>
                         <div class="form-group">
                             <input name="" id="" class="btn btn-primary" type="submit" value="Sign Up">
                         </div>
-                        <small>Have an account?<a href="/"> LogIn</a></small>
                     </form>
                 </div>
             </div>

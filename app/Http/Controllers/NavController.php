@@ -8,14 +8,8 @@ use App\Models\Data;
 
 class NavController extends Controller
 {
-    public function home()
+    public function dashboard()
     {
-        return view('home', ['key'=>'home']);
-    }
-
-    public function rekapdata()
-    {
-        return view('rekapdata', ['key'=>'rekapdata']);
-    }
-    
+        return view('layouts.dashboard', ['key'=>'dashboard']);
+    }    
 }

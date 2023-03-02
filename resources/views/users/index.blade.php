@@ -1,12 +1,31 @@
-@extends('users.layout')
+@extends('layouts.main')
 @section('title', 'Data User')
+
 @section('content')
 
-<h4 class="mt-1">Data User</h4>
+<title>Data User KPH</title>
 
-<form action="/user/search" method="GET">
+{{--  <h4 class="mt-1">Data User</h4>  --}}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">
+            <button class="btn btn-primary" type="button" onclick="window.location='{{ route('register') }}'">
+                Tambah
+            </button>
+            <button class="btn btn-success" type="button">Download Excel</button>
+        </h3>
+    </div>
+    <div class="card-body">
+        @if (session('msg'))
+            <p>
+                {{ session('msg') }}
+            </p>
+        @endif
+
+{{-- <form action="/user/search" method="GET">
     <div class="input-group mt-2 mb-2">
-        <input name="search" type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
+        <input name="search" type="text" class="form-control" placeholder="Cari data user" aria-label="search" aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Cari</button>
 </div>
 </form>
@@ -17,32 +36,31 @@
     <div class="alert alert-success mt-3" role="alert">
         {{ $message }}
     </div>
-@endif
+@endif --}}
 
-<table class="table table-hover mt-2">
-    <thead>
-      <tr>
-        <th>No.</th>
-        <th>Nama</th>
-        <th>NIP</th>
-        <th>Email</th>
-        <th>Jabatan</th>
-        <th>Wilayah</th>
-        <th>Level</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
+<div class="card-body table-responsive">
+    <table id="table" class="table table-sm text-nowrap table-hover" style="width: 100%">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Nama</th>
+                <th>Wilayah</th>
+                <th>NIP</th>
+                <th>Jabatan</th>
+                <th>Level</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
     
-        @foreach ($datas as $no => $data)
+        @foreach ($datas as $data)
         
             <tr>
-                <th scope="row">{{ $datas->firstItem() + $no }}</th>
+                <td>{{ $loop->iteration }}.</td>
                 <td>{{ $data->nama }}</td>
-                <td>{{ $data->nip }}</td>
-                <td>{{ $data->email }}</td>
-                <td>{{ $data->jabatan }}</td>
                 <td>{{ $data->wilayah }}</td>
+                <td>{{ $data->nip }}</td>
+                <td>{{ $data->jabatan }}</td>
                 <td>{{ $data->level }}</td>
                 <td>
                     <a href="{{ route('user.edit', $data->id) }}" type="button" class="btn btn-warning rounded-3">Ubah</a>
@@ -75,8 +93,13 @@
                     </div>
                 </td>
             </tr>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         @endforeach
     </tbody>
 </table>
-{{ $datas->links() }}
+</div>
+{{-- {{ $datas->links() }} --}}
 @stop

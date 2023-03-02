@@ -1,66 +1,24 @@
+@extends('layouts.main')
+
+@section('title, Rekap Bidang')
+
+@section('content')
+
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{--  <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">  --}}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
-<head>
-    <title>Eviden Poin - Rekap Bidang</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-</head>
-
-<div class="container-fulid">
-    <div class="row">
-        <div class="col-lg-12 py-2 bg-primary">
-            <!-- <nav class="navbar navbar-light bg-light"> -->
-            <a class="navbar-light text-light" href="/home">
-                <img src="https://play-lh.googleusercontent.com/X6eLv-VmpsV412pg1EYIQm-fAERYW6kTKIrA0XdSPvfcmf4O8UaTIewiCmie3aDhhjGi"
-                    width="30" height="30" class="d-inline-block align-top ml-2" alt=""> Eviden Poin KPH
-                Semarang</a>
-            <!-- </nav> -->
-
-            <div class="dropdown float-right ">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->nama ?? '' }}
-                </button>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">
-                        <div class="media">
-                            <img class="align-self-center mr-3"
-                                src="https://1.bp.blogspot.com/-iPBwZjNZRw8/YCoD1genTBI/AAAAAAAAH7o/lRsWaucqH1kTYm-9bxO7u8kKblB80MaKwCLcBGAsYHQ/s2001/logo-perhutani-02.png"
-                                height="30" width="30" alt="Generic placeholder image">
-                            <div class="media-body">
-                                <h5 class="mt-0"> {{ Auth::user()->nama ?? '' }} </h5>
-
-                                <small>
-                                    <p class="mb-0">KPH Semarang</p>
-                                </small>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item" href="/profile">Profile</a>
-                    <a class="dropdown-item" href="/logout">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<title>Rekap bidang</title>
 
 <div class="col-lg-12">
     <div class="card mt-4 vh-100">
         <div class="card-body">
 
             <h4 class="mt-2">Rekap Bidang</h4>
-            <div class="text-right">
-                <a href="/rekapdata" class="btn btn-danger ml-3" role="button" aria-pressed="true">Kembali</a>
-            </div>
-
+<h3>
+    <a class="btn btn-success" href="{{ route('rb.export') }}?search={{ request()->has('search') ? request()->search : '1' }}">Download Excel</a>
+</h3>
             <form>
                 <div class="input-group mt-2 mb-4">
                     <select name="search" type="number" class="form-control" placeholder="search" aria-label="search"
@@ -140,8 +98,7 @@
                                     <th>{{ $data1->total }}</th>
                                     <th></th>
                                 </tr>
-                            @endif
-                        @endforeach
+                            
 
                     </tbody>
 
@@ -177,8 +134,9 @@
                                 }
                             });
                         </script>
-
-                        {{-- end of canvas --}}
+@endif
+@endforeach
+                        {{-- end of canvas
 
 
                         <table class="table table-bordered text-center">
@@ -258,8 +216,7 @@
                                             <th>{{ $data1->total }}</th>
                                             <th></th>
                                         </tr>
-                                    @endif
-                                @endforeach
+                                    
 
 
                             </tbody>
@@ -268,7 +225,7 @@
                         </table>
 
                         {{-- Start of canvas --}}
-                        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                        {{-- <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
                         <script>
                             var xValues = ["JEMBOLO SELATAN", "KEDUNGJATI", "MANGGAR", "PADAS", "TEMPURAN", "JEMBOLO UTARA", "PENGGARON",
@@ -299,13 +256,16 @@
                                 }
                             });
                         </script>
-
+@endif
+@endforeach --}}
                         {{-- end of canvas --}}
             </div>
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+@endsection
+
+{{--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -316,6 +276,6 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-</script>
+</script>  --}}
 
 </html>

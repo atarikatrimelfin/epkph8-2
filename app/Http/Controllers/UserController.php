@@ -8,18 +8,17 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+         public function index() {
 
-     public function index() {
-
-        $users = User::paginate(10);
+        // $users = User::paginate(10);
+        $users = User::all();
         return view('users.index', ['key'=>'user'])
             ->with('datas', $users)  ;
+
+        // $data = [
+        //     'datas' => User::all(),
+        // ];
+        // return view('users.index', ['key'=>'user']);
      }
 
      public function search(Request $request){
@@ -48,29 +47,16 @@ class UserController extends Controller
     //    }
     }
     
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('user.add', ['key'=>'']);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->validate([
             'nama' => 'required',
             'nip' => 'required',
-            'email' => 'required',
             'jabatan' => 'required',
             'wilayah' => 'required',
             'level' => 'required',
@@ -80,23 +66,11 @@ class UserController extends Controller
         return redirect()->route('user.index')->with('success', 'User created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function show(User $user)
     {
         return view('user.detail', compact('user'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $data = DB::table('users')->where('id', $id)->first();
@@ -105,29 +79,20 @@ class UserController extends Controller
         /*return view('users.edit', compact('user'));*/
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function update($id, Request $request)
     {
         $request->validate([
             'nama' => 'required',
             'nip' => 'required',
-            'email' => '',
             'jabatan' => 'required',
             'wilayah' => 'required',
         ]);
 
-        DB::update('UPDATE users SET nama = :nama, nip = :nip, email = :email, jabatan = :jabatan, wilayah = :wilayah WHERE id = :id',
+        DB::update('UPDATE users SET nama = :nama, nip = :nip, jabatan = :jabatan, wilayah = :wilayah WHERE id = :id',
         [
             'id' => $id,
             'nama' => $request->nama,
             'nip' => $request->nip,
-            'email' => $request->email,
             'jabatan' => $request->jabatan,
             'wilayah' => $request->wilayah,
         ]
@@ -137,12 +102,6 @@ class UserController extends Controller
         return redirect()->route('user.index')->with('success', 'User updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function delete($id)
     {
         DB::delete('DELETE FROM users WHERE id = :id', ['id' => $id]);

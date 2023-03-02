@@ -10,18 +10,7 @@ class Data extends Model
 {
     use HasFactory;
 
-     /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
     protected $table = 'data_laporan';
-
-    /**
-     * The attributes that aren't mass assignable.
-     *
-     * @var array
-     */
     protected $guarded = [];
 
     public function getTanggalAttribute()
@@ -29,10 +18,5 @@ class Data extends Model
         return Carbon::parse($this->attribute['tanggal'])
             ->translatedFormat('l, d F Y');
     }
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
     public $timestamps = false;
 }

@@ -18,7 +18,7 @@
 <div class="card mt-4">
 	<div class="card-body">
 
-        <h5 class="card-title fw-bolder mb-3">Tambah Eviden</h5>
+        {{--  <h5 class="card-title fw-bolder mb-3">Tambah Eviden</h5>  --}}
 
 		<form method="post" action="{{ route('evdata.store') }}">
 			@csrf

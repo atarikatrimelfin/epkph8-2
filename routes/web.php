@@ -12,6 +12,8 @@ use App\Http\Controllers\GrafikController;
 use App\Http\Controllers\RekapBidang1Controller;
 use App\Http\Controllers\RekapBidangController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HarianExport;
+use App\Http\Controllers\RekapBidangExport;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,10 +40,8 @@ Route::post('/ceklogin', [AuthController::class, 'ceklogin'])->name('ceklogin');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['middleware'=>['auth']], function () {
-    Route::get('/home', [NavController::class, 'home'])->name('home');
+    Route::get('/dashboard', [NavController::class, 'dashboard'])->name('dashboard');
     // Route::get('/profile', [NavController::class, 'profile'])->name('profile');
-    
-    Route::get('/searchuser', [NavController::class, 'searchuser'])->name('searchuser');
 
     Route ::prefix("profile")->group(function(){
         Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
@@ -57,7 +57,6 @@ Route::group(['middleware'=>['auth']], function () {
 
     Route ::prefix("user")->group(function(){
         Route::get('/', [UserController::class, 'index'])->name('user.index');
-        Route::get('search', [UserController::class, 'search'])->name('search');
         Route::get('add', [AuthController::class, 'register'])->name('register');
         Route::post('store', [UserController::class, 'store'])->name('user.store');
         Route::get('edit/{id}', [UserController::class, 'edit'])->name('user.edit');
@@ -72,17 +71,19 @@ Route::group(['middleware'=>['auth']], function () {
             Route::get('/', [EvdataController::class, 'index'])->name('evdata.index');
             Route::get('add', [EvdataController::class, 'create'])->name('evdata.add');
             Route::post('store', [EvdataController::class, 'store'])->name('evdata.store');
-            Route::get('edit/{id}', [EvdataController::class, 'edit'])->name('evdata.edit');
-            Route::post('update/{id}', [EvdataController::class, 'update'])->name('evdata.update');
             Route::post('delete/{id}', [EvdataController::class, 'delete'])->name('evdata.delete');
-            Route::post('recycle/{id}', [EvdataController::class, 'recycle'])->name('evdata.recycle');
-            Route::get('restore/{id}', [EvdataController::class, 'restore'])->name('evdata.restore');
+            // Route::post('recycle/{id}', [EvdataController::class, 'recycle'])->name('evdata.recycle');
+            // Route::get('restore/{id}', [EvdataController::class, 'restore'])->name('evdata.restore');
             });
     
-    Route::get('/rekapdata', [NavController::class, 'rekapdata'])->name('rekapdata');
-    Route::get('/rekapdata/harian', [HarianController::class, 'harian'])->name('harian');
-    Route::get('/rekapdata/rekapbidang1', [RekapBidang1Controller::class, 'rekapbidang1'])->name('rekapbidang1');
-    Route::get('/rekapdata/rekapbidang', [RekapBidangController::class, 'rekapbidang'])->name('rekapbidang');
-    Route::get('/rekapdata/rekap', [RekapController::class, 'rekap'])->name('rekap');
-    Route::get('/rekapdata/grafik', [GrafikController::class, 'grafik'])->name('grafik');
+    Route::get('/rekapdata/harian', [HarianController::class, 'harian'])->name('rekap.harian');
+    Route::get('/rekapdata/rekapbidang1', [RekapBidang1Controller::class, 'rekapbidang1'])->name('rekap.rekapbidang1');
+    Route::get('/rekapdata/rekapbidang', [RekapBidangController::class, 'rekapbidang'])->name('rekaprekapbidang');
+    Route::get('/rekapdata/rekap', [RekapController::class, 'rekap'])->name('rekap.rekap');
+    Route::get('/rekapdata/grafik', [GrafikController::class, 'grafik'])->name('rekap.grafik');
+
+    Route::get('harian/export/', [HarianController::class, 'export'])->name('harian.export');
+    Route::get('rb/export/', [RekapBidangController::class, 'export'])->name('rb.export');
+    Route::get('rb1/export/', [RekapBidang1Controller::class, 'export'])->name('rb1.export');
+    Route::get('r/export/', [RekapController::class, 'export'])->name('r.export');
 });

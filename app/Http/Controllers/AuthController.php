@@ -11,7 +11,7 @@ class AuthController extends Controller
 {
     public function register()
     {
-        return view('register');
+        return view('users.register');
     }
     public function registered(Request $request)
     {
@@ -42,7 +42,7 @@ class AuthController extends Controller
             return redirect('/');
         }
         else{
-            return redirect('/home');
+            return redirect('/dashboard');
         }
     }
     public function handle($request, $next)
