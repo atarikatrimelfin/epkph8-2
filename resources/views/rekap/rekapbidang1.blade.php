@@ -1,68 +1,34 @@
 @extends('layouts.main')
 
-@section('title, Rekap Bidang 1')
+@section('title', 'Rekap Bidang 1')
 
 @section('content')
 
-<title>Rekap Bidang 1</title>
+    <title>Rekap Bidang 1</title>
 
-<div class="col-lg-12">
-    <div class="card mt-4 vh-100">
-        <div class="card-body">
-
-            <h4 class="mt-2">Rekap Bidang 1</h4>
-
-            <h3>
-                <a class="btn btn-success" href="{{ route('rb1.export') }}?search={{ request()->has('search') ? request()->search : '1' }}">Download Excel</a>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <a class="btn btn-outline-success"
+                    href="{{ route('rb1.export') }}?search={{ request()->has('search') ? request()->search : '1' }}">Download
+                    Excel</a>
             </h3>
-            <form>
-                <div class="input-group mt-2 mb-4">
-                    <select name="search" type="number" class="form-control" placeholder="search" aria-label="search"
-                        aria-describedby="button-addon2">
-                        <option>Pilih Bulan</option>
-                        <option value="01">Januari</option>
-                        <option value="02">Febuari</option>
-                        <option value="03">Maret</option>
-                        <option value="04">April</option>
-                        <option value="05">Mei</option>
-                        <option value="06">Juni</option>
-                        <option value="07">Juli</option>
-                        <option value="08">Agustus</option>
-                        <option value="09">September</option>
-                        <option value="10">Oktober</option>
-                        <option value="11">November</option>
-                        <option value="12">Desember</option>
-                    </select>
-
-                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Cari</button>
-                </div>
-            </form>
-
-            <!-- buat scroll -->
-            <style>
-                .scroll {
-                    height: 500px;
-                    overflow: scroll;
-                }
-            </style>
-
-            <div class="scroll">
-                <table class="table table-bordered text-center">
+        </div>
+        <div class="card-body">
+            <div class="card-body table-responsive p-0">
+                <table id="bidang1" class="table table-sm text-nowrap text-hover" style="width=100%">
                     <thead>
                         <tr>
                             <th colspan="42">Tanggal 1 s.d. 31</th>
                         </tr>
-
-
                         <tr>
                             <th rowspan="2">No.</th>
                             <th rowspan="2">Nama</th>
                             <th rowspan="2">Jabatan</th>
-                            <th colspan="9">Tanaman / Pemeliharaan / Persemaian</th>
-                            <th colspan="9">Keamanan / Patroli</th>
-                            <th colspan="9">Sosialisasi / Rapat / Apel</th>
-                            <th colspan="9">Produksi / Agroforestry / Wisata</th>
-                        </tr>
+                            <th colspan="9" style="text-align: center">Tanaman / Pemeliharaan / Persemaian</th>
+                            <th colspan="9" style="text-align: center">Keamanan / Patroli</th>
+                            <th colspan="9" style="text-align: center">Sosialisasi / Rapat / Apel</th>
+                            <th colspan="9" style="text-align: center">Produksi / Agroforestry / Wisata</th>
                         </tr>
                         <tr>
                             <th>1</th>
@@ -106,11 +72,11 @@
                             <th>Jml</th>
                         </tr>
                     </thead>
-                    <tbody>
 
+                    <tbody>
                         @foreach ($datas1 as $no => $data1)
                             <tr>
-                                <th scope="row">{{ ++$no }}</th>
+                                <th scope="row">{{ ++$no }}.</th>
 
                                 <td>{{ $data1->nama }}</td>
                                 <td>{{ $data1->jabatan }}</td>
@@ -164,6 +130,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 
 {{--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
@@ -177,6 +144,6 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-</script>  --}}
+</script>  
 
-</html>
+</html> --}}

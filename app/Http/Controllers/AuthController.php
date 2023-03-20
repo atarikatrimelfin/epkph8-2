@@ -25,6 +25,26 @@ class AuthController extends Controller
         ]);
 
         return redirect('/user');
+//                 $nama = $request->nama;
+//         $nip = $request->nip;
+//         $jabatan = $request->jabatan;
+//         $wilayah = $request->wilayah;
+//         $level = $request->level;
+// try {
+//     $user = new User;
+//         $user->nama = $nama;
+//         $user->nip = $nip;
+//         $user->jabatan = $jabatan;
+//         $user->wilayah = $wilayah;
+//         $user->level = $level;
+//         $user->store();
+
+//         echo 'Data berhasil tersimpan';
+//         return redirect('/user');
+// }
+// catch (Throwble $e) {
+//     echo $e;
+//     }
     }
 
     public function login()

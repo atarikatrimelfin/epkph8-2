@@ -3,11 +3,6 @@
 @section('title', 'Dashboard')
 @section('content')
 <title>Dashboard</title>
-    <div class="container-fluid px-4">
-        {{-- <h1 class="mt-2">Dashboard</h1> --}}
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Dashboard</li>
-        </ol>
         <div class="card">
             <div class="card-body">
                 <div class="row">

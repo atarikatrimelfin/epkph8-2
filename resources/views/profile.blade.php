@@ -23,12 +23,12 @@
             <p class="text-muted mb-1">{{ Auth::user()->level ?? ''}}</p>
             <p class="text-muted mb-4">Perum Perhutani KPH Semarang</p>
             <div class="d-flex justify-content-center mb-2">
-            <a class="btn btn-danger" href="/logout" role="button">Logout</a>
+            <a class="btn btn-outline-danger" href="/logout" role="button">Logout</a>
               <!-- <button type="button" class="btn btn-outline-primary ms-1">Message</button> -->
             </div>
           </div>
         </div>
-        <div class="card mb-4 mb-lg-0">
+        {{-- <div class="card mb-4 mb-lg-0">
           <div class="card-body p-0">
             <ul class="list-group list-group-flush rounded-3">
             <li class="list-group-item d-flex justify-content-between align-items-center p-3">
@@ -57,7 +57,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> --}}
       </div>
       <div class="col-lg-8">
         <div class="card mb-4">

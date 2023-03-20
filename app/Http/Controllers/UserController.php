@@ -21,16 +21,16 @@ class UserController extends Controller
         // return view('users.index', ['key'=>'user']);
      }
 
-     public function search(Request $request){
+    //  public function search(Request $request){
 
-        $search = $request->search;
+    //     $search = $request->search;
 
-        $users = DB::table('users')
-        ->where('nama', 'like', "%".$search."%")
-        ->paginate();
+    //     $users = DB::table('users')
+    //     ->where('nama', 'like', "%".$search."%")
+    //     ->paginate();
 
-        return view('users.index', ['key'=>'user'])
-            ->with('datas', $users)  ;
+    //     return view('users.index', ['key'=>'user'])
+    //         ->with('datas', $users)  ;
     //     if($request->has('search')){
     //     $datas = DB::select('select * from users WHERE nama like :search',[
     //         'search'=>'%'.$request->search.'%',
@@ -45,7 +45,7 @@ class UserController extends Controller
     //     return view('users.index', ['key'=>'user'])
     //         ->with('datas', $datas);
     //    }
-    }
+    // }
     
     public function create()
     {
@@ -64,6 +64,8 @@ class UserController extends Controller
         
         User::create($request->all());
         return redirect()->route('user.index')->with('success', 'User created successfully.');
+
+        
     }
 
     public function show(User $user)

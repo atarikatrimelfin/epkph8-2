@@ -1,74 +1,53 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@extends('layouts.form')
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Title</Title></title>
-  </head>
-  <body>
+@section('content')
+    <title>Tambah User</title>
     <div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-lg-4">
-            <div class="card mt-5">
-                <div class="card-header">
-                    <strong class="text-center d-block">Form <span class="text-primary">Register</span></strong>
-                </div>
-                <div class="card-body">
-                    <form action="/registered" method="POST">
-                        @csrf
-                        <div class="form-group">
-                          <label for="">Nama</label>
-                          <input type="text" name="nama" class="form-control" autofocus Required autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                          <label for="">NIP</label>
-                          <input type="text" name="nip"
-                            class="form-control" Required autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                          <label for="">Jabatan</label>
-                          <input type="jabatan" name="jabatan"
-                            class="form-control" Required autocomplete="off">
-                        </div>
-                        {{-- <div class="form-group">
-                          <label for="">Wilayah</label>
-                          <input type="wilayah" name="wilayah"
-                            class="form-control" Required autocomplete="off">
-                        </div> --}}
-                        
-                        <div class="form-group">
-                          <label for="">Password</label>
-                          <input type="password" name="password"
-                            class="form-control" Required autocomplete="off">
-                        </div>
-                        <div class="mb-3">
-                          <label for="wilayah" class="form-label">Wilayah</label>
-                          <select name="wilayah" class="form-control mb-3" id="wilayah" Required autocomplete="off">
-                            <option value="">Pilih Wilayah</option>
-                              <option value="WILAYAH BARAT">WILAYAH BARAT</option>
-                              <option value="WILAYAH TIMUR">WILAYAH TIMUR</option>
-                          </select>
-                          <div class="invalid-feedback">Wilayah Harus Dipilih!</div>
-                          </div>
-                        <div class="form-group">
-                            <input name="" id="" class="btn btn-primary" type="submit" value="Sign Up">
-                        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="card card-primary mt-5">
+                    <div class="card-header">
+                        <strong class="text-center d-block">Form Register</strong>
+                    </div>
+                    <div class="card-body">
+                        <form action="/registered" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="">Nama</label>
+                                <input type="text" name="nama" class="form-control" autofocus Required
+                                    autocomplete="off">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">NIP</label>
+                                <input type="text" name="nip" class="form-control" Required autocomplete="off">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Jabatan</label>
+                                <input type="jabatan" name="jabatan" class="form-control" Required autocomplete="off">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Password</label>
+                                <input type="password" name="password" class="form-control" Required autocomplete="off">
+                            </div>
+                            <div class="mb-3">
+                                <label for="wilayah" class="form-label">Wilayah</label>
+                                <select name="wilayah" class="form-control mb-3" id="wilayah" Required autocomplete="off">
+                                    <option value="">Pilih Wilayah</option>
+                                    <option value="WILAYAH BARAT">WILAYAH BARAT</option>
+                                    <option value="WILAYAH TIMUR">WILAYAH TIMUR</option>
+                                </select>
+                                <div class="invalid-feedback">Wilayah Harus Dipilih!</div>
+                            </div>
+                    </div>
+                    <div class="card-footer">
+                        <input name="" id="" class="btn btn-primary" type="submit" value="Tambah">
+                        <button onclick="window.location='/user'" class="btn btn-danger" type="button"
+                            aria-pressed="true">Kembali</button>
+                    </div>
                     </form>
                 </div>
             </div>
         </div>
-        </div>
     </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
-</html>
+    </div>
+@endsection
