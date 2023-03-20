@@ -30,38 +30,38 @@
                         <div class="card card-outline rouded-lg mt-5 card-primary">
                             {{-- <strong class="text-center d-block">Form <span class="text-primary">LogIn</span></strong>
                         </div> --}}
-                        <div class="card-body">
-                            <form action="/ceklogin" method="POST">
-                                @csrf
-                                <div class="card-header text-center">
-                                  <a href="/" class="h1"><b>Eviden</b>Poin</a>
-                                </div>
-                                <p class="login-box-msg" style="font-size: 14px">Perum Perhutani KPH Semarang</p>
-                                
-                                <div class="input-group mb-3">
-                                    <input type="text" name="nip" class="form-control" placeholder="NIP" Required
-                                        autocomplete="off" autofocus>
+                            <div class="card-body">
+                                <form action="/ceklogin" method="POST">
+                                    @csrf
+                                    <div class="card-header text-center">
+                                        <a href="/" class="h1"><b>Eviden</b>Poin</a>
+                                    </div>
+                                    <p class="login-box-msg" style="font-size: 14px">Perum Perhutani KPH Semarang</p>
+
+                                    <div class="input-group mb-3">
+                                        <input type="text" name="nip" class="form-control" placeholder="NIP"
+                                            Required autocomplete="off" autofocus>
                                         <div class="input-group-append">
-                                          <div class="input-group-text">
-                                              <span class="fas fa-id-card"></span>
-                                          </div>
-                                      </div>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <input type="password" name="password" class="form-control" placeholder="Password" Required
-                                        autocomplete="off">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-id-card"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="password" name="password" class="form-control"
+                                            placeholder="Password" Required autocomplete="off">
                                         <div class="input-group-append">
-                                          <div class="input-group-text">
-                                              <span class="fas fa-lock"></span>
-                                          </div>
-                                      </div>
-                                </div>
-                                <div class="form-group col-12">
-                                    <input name="" id="" class="btn btn-successv2 btn-block" type="submit"
-                                        value="Login">
-                                </div>
-                            </form>
-                        </div>
+                                            <div class="input-group-text">
+                                                <span class="fas fa-lock"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <input name="" id="" class="btn btn-successv2 btn-block"
+                                            type="submit" value="Login">
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

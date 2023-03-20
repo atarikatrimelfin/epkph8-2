@@ -59,13 +59,5 @@
         </p>
       </a>
     </li>
-    <li class="nav-item">
-      <a href="{{ url('/rekapdata/grafik') }}" class="nav-link {{($key=='grafik') ? 'active': ''}}">
-        <i class="nav-icon fas fa-chart-pie"></i>
-        <p>
-          Grafik
-        </p>
-      </a>
-    </li>
   </ul>
 </nav>

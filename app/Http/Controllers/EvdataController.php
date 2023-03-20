@@ -118,7 +118,7 @@ class EvdataController extends Controller
         ]
         );
 
-        return redirect()->route('evdata.index', ['key'=>'evdata'])->with('success', 'Data created successfully.');
+        return redirect()->route('evdata.index', ['key'=>'evdata'])->with('success', 'Data eviden berhasil ditambahkan');
     }
 
     public function show(Evdata $evdata)
@@ -251,7 +251,7 @@ class EvdataController extends Controller
         // Admin::where('id_pajak', $id)->delete();
 
         // $user->delete();
-        return redirect()->route('evdata.index')->with('success', 'Data deleted successfully');
+        return redirect()->route('evdata.index')->with('success', 'Data eviden berhasil dihapus');
     }
 
     // public function user()

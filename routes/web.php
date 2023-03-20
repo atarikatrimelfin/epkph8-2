@@ -8,7 +8,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RekapController;
 use App\Http\Controllers\EvdataController;
 use App\Http\Controllers\HarianController;
-use App\Http\Controllers\GrafikController;
 use App\Http\Controllers\RekapBidang1Controller;
 use App\Http\Controllers\RekapBidangController;
 use App\Http\Controllers\ProfileController;
@@ -47,14 +46,6 @@ Route::group(['middleware'=>['auth']], function () {
         Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
     });
 
-
-    //CRUD USER TABLE
-    // Route::get('/user', [UserController::class, 'index'])->name('user.index');
-    // Route::post('/user/{id}', [UserController::class, 'edit'])->name('user.edit');
-    // Route::post('/user/{id}', [UserController::class, 'update'])->name('user.update');
-    // Route::post('/user/{id}', [UserController::class, 'delete'])->name('user.delete');
-
-
     Route ::prefix("user")->group(function(){
         Route::get('/', [UserController::class, 'index'])->name('user.index');
         Route::get('add', [AuthController::class, 'register'])->name('register');
@@ -80,7 +71,6 @@ Route::group(['middleware'=>['auth']], function () {
     Route::get('/rekapdata/rekapbidang1', [RekapBidang1Controller::class, 'rekapbidang1'])->name('rekap.rekapbidang1');
     Route::get('/rekapdata/rekapbidang', [RekapBidangController::class, 'rekapbidang'])->name('rekaprekapbidang');
     Route::get('/rekapdata/rekap', [RekapController::class, 'rekap'])->name('rekap.rekap');
-    Route::get('/rekapdata/grafik', [GrafikController::class, 'grafik'])->name('rekap.grafik');
 
     Route::get('harian/export/', [HarianController::class, 'export'])->name('harian.export');
     Route::get('rb/export/', [RekapBidangController::class, 'export'])->name('rb.export');

@@ -52,26 +52,24 @@ class UserController extends Controller
         return view('user.add', ['key'=>'']);
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'nama' => 'required',
-            'nip' => 'required',
-            'jabatan' => 'required',
-            'wilayah' => 'required',
-            'level' => 'required',
-        ]);
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'nama' => 'required',
+    //         'nip' => 'required',
+    //         'jabatan' => 'required',
+    //         'wilayah' => 'required',
+    //         'level' => 'required',
+    //     ]);
         
-        User::create($request->all());
-        return redirect()->route('user.index')->with('success', 'User created successfully.');
+    //     User::create($request->all());
+    //     return redirect()->route('user.index')->with('success', 'Data user berhasil ditambahkan');        
+    // }
 
-        
-    }
-
-    public function show(User $user)
-    {
-        return view('user.detail', compact('user'));
-    }
+    // public function show(User $user)
+    // {
+    //     return view('user.detail', compact('user'));
+    // }
 
     public function edit($id)
     {
@@ -101,7 +99,7 @@ class UserController extends Controller
         );
         /*
         $user->update($request->all());*/
-        return redirect()->route('user.index')->with('success', 'User updated successfully');
+        return redirect()->route('user.index')->with('success', 'Data user berhasil diperbarui');
     }
 
     public function delete($id)
@@ -112,7 +110,7 @@ class UserController extends Controller
         // Admin::where('id_pajak', $id)->delete();
 
         // $user->delete();
-        return redirect()->route('user.index')->with('success', 'User deleted successfully');
+        return redirect()->route('user.index')->with('success', 'Data user berhasil dihapus');
     }
 
     // public function user()

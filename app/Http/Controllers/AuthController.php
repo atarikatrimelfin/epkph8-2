@@ -23,28 +23,7 @@ class AuthController extends Controller
             'wilayah' => $request -> wilayah,
             'password' => bcrypt ($request -> password),
         ]);
-
-        return redirect('/user');
-//                 $nama = $request->nama;
-//         $nip = $request->nip;
-//         $jabatan = $request->jabatan;
-//         $wilayah = $request->wilayah;
-//         $level = $request->level;
-// try {
-//     $user = new User;
-//         $user->nama = $nama;
-//         $user->nip = $nip;
-//         $user->jabatan = $jabatan;
-//         $user->wilayah = $wilayah;
-//         $user->level = $level;
-//         $user->store();
-
-//         echo 'Data berhasil tersimpan';
-//         return redirect('/user');
-// }
-// catch (Throwble $e) {
-//     echo $e;
-//     }
+        return redirect('/user')->with('success', 'Data user berhasil ditambahkan');
     }
 
     public function login()

@@ -15,13 +15,6 @@
             </h3>
         </div>
         <div class="card-body">
-            @if (session('msg'))
-                <p>
-                    {{ session('msg') }}
-                </p>
-            @endif
-
-
             @if ($message = Session::get('success'))
                 <div class="alert alert-success mt-3" role="alert">
                     {{ $message }}
@@ -52,11 +45,6 @@
                                 <td>{{ $data->jabatan }}</td>
                                 <td>{{ $data->level }}</td>
                                 <td>
-                                    {{-- <a href="{{ route('user.edit', $data->id) }}" type="button"
-                                        class="btn btn-warning">
-                                        <i class="fas fa-user-edit"></i>
-                                    </a> --}}
-
                                     <button class="btn btn-warning" type="button"
                                         onclick="window.location='{{ route('user.edit', $data->id) }}'">
                                         <i class="fas fa-user-edit"></i>
@@ -69,24 +57,26 @@
                                     </button>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="hapusModal{{ $data->id }}" tabindex="-1"
+                                    <div class="modal" id="hapusModal{{ $data->id }}" tabindex="-1"
                                         aria-labelledby="hapusModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="hapusModalLabel">Konfirmasi</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
+                                                    <button type="button" class="close" data-bs-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span>&times;</span>
+                                                    </button>
                                                 </div>
                                                 <form method="POST" action="{{ route('user.delete', $data->id) }}">
                                                     @csrf
                                                     <div class="modal-body">
-                                                        Apakah anda yakin ingin menghapus data ini?
+                                                        Apakah Anda yakin ingin menghapus data ini?
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
                                                             data-bs-dismiss="modal">Tutup</button>
-                                                        <button type="submit" class="btn btn-primary">Ya</button>
+                                                        <button type="submit" class="btn btn-danger">Yakin</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -94,18 +84,6 @@
                                     </div>
                                 </td>
                             </tr>
-                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-                                integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
-                            </script>
-                            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-                            </script>
-                            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-                                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-                            </script>
-                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-                                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-                            </script>
                         @endforeach
                     </tbody>
                 </table>
@@ -113,4 +91,17 @@
         </div>
     </div>
     {{-- {{ $datas->links() }} --}}
-@stop
+@endsection
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>

@@ -3,9 +3,6 @@
 @section('title', 'Rekap Bidang')
 
 @section('content')
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-
     <title>Rekap Bidang</title>
     <div class="card">
         <div class="card-header">
@@ -35,7 +32,7 @@
                         <option value="12">Desember</option>
                     </select>
 
-                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Cari</button>
+                    <button class="btn btn-outline-dark" type="submit" id="button-addon2">Cari</button>
                 </div>
             </form>
 
@@ -90,52 +87,39 @@
 
                 </table>
             </div>
-                {{-- Start of canvas --}}
-                <canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
+            {{-- Start of canvas --}}
+            <canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
 
-                <script>
-                    var xValues = ["Tanaman / Pemeliharaan / Persemaian", "Keamanan / Patroli", "Sosialisasi / Rapat / Apel",
-                        "Produksi / Agroforestry / Wisata"
-                    ];
-                    var yValues = [{{ $data1->jum1 }}, {{ $data1->jum2 }}, {{ $data1->jum3 }}, {{ $data1->jum4 }}];
-                    var barColors = ["red", "green", "blue", "orange"];
+            <script>
+                var xValues = ["Tanaman / Pemeliharaan / Persemaian", "Keamanan / Patroli", "Sosialisasi / Rapat / Apel",
+                    "Produksi / Agroforestry / Wisata"
+                ];
+                var yValues = [{{ $data1->jum1 }}, {{ $data1->jum2 }}, {{ $data1->jum3 }}, {{ $data1->jum4 }}];
+                var barColors = ["red", "green", "blue", "orange"];
 
-                    new Chart("myChart1", {
-                        type: "bar",
-                        data: {
-                            labels: xValues,
-                            datasets: [{
-                                backgroundColor: barColors,
-                                data: yValues
-                            }]
+                new Chart("myChart1", {
+                    type: "bar",
+                    data: {
+                        labels: xValues,
+                        datasets: [{
+                            backgroundColor: barColors,
+                            data: yValues
+                        }]
+                    },
+                    options: {
+                        legend: {
+                            display: false
                         },
-                        options: {
-                            legend: {
-                                display: false
-                            },
-                            title: {
-                                display: true,
-                                text: "World Wine Production 2018"
-                            }
+                        title: {
+                            display: true,
+                            text: "REKAP BIDANG"
                         }
-                    });
-                </script>
-                @endif
-                @endforeach
-            </div>
+                    }
+                });
+            </script>
+            @endif
+            @endforeach
         </div>
     </div>
+    </div>
 @endsection
-
-{{--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
-</script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-</script>  --}}
