@@ -16,6 +16,8 @@
         <p>Data Eviden Poin</p>
       </a>
     </li>
+
+    @if (auth()->user()->level=="admin")
     <li class="nav-item {{($key=='harian')||($key=='rekapbidang')||($key=='rekapbidang1')||($key=='rekap') ? 'menu-is-opening menu-open': ''}}">
       <a href="{{ url('#') }}" class="nav-link {{($key=='harian')||($key=='rekapbidang')||($key=='rekapbidang1')||($key=='rekap') ? 'active': ''}}">
         <i class="nav-icon fas fa-table"></i>
@@ -59,5 +61,6 @@
         </p>
       </a>
     </li>
+    @endif
   </ul>
 </nav>

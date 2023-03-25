@@ -30,10 +30,10 @@
                                     </option>
                                 </select>
                             </div>
+                            
                             <div class="mb-3">
                                 <label>Tanaman / Pemeliharaan / Persemaian</label></br>
-                                <input type="radio" name="poin11" value="1"> 06.00 - 09.00</br>
-                                <input type="radio" name="poin12" value="1"> 09.00 - 12.00</br>
+                                <input type="checkbox" name="poin12" value="1"> 09.00 - 12.00</br>
                                 <input type="radio" name="poin13" value="1"> 12.00 - 15.00</br>
                                 <input type="radio" name="poin14" value="1"> 15.00 - 18.00</br>
                                 <input type="radio" name="poin15" value="2"> 18.00 - 21.00</br>
@@ -77,7 +77,7 @@
                                 <input type="radio" name="poin47" value="2"> 00.00 - 03.00</br>
                                 <input type="radio" name="poin48" value="2"> 03.00 - 06.00</br>
                             </div>
-
+                        
                             <div class="mb-3">
                                 <label for="foto" class="form-label">Foto</label>
                                 <input type="file" class="form-inline" id="foto" name="foto">
