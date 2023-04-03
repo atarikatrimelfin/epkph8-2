@@ -4,18 +4,21 @@
 
 @section('content')
 
-<title>Rekap Eviden Poin</title>
+    <title>Rekap Eviden Poin</title>
 
-<div class="card">
-    <div class="card-header">
-        <h3 class="card-title">
-            <a class="btn btn-outline-success"
-                        href="{{ route('r.export') }}?search={{ request()->has('search') ? request()->search : '01' }}">Download
-                        Excel
-            </a>
-        </h3>
-    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <a class="btn btn-outline-success"
+                    href="{{ route('r.export') }}?search={{ request()->has('search') ? request()->search : '01' }}">Download
+                    Excel
+                </a>
+            </h3>
+        </div>
         <div class="card-body">
+            <div class="chart-container">
+                <canvas id="myChart2"></canvas>
+            </div>
             <form>
                 <div class="input-group mt-2 mb-4">
                     <select name="search" type="number" class="form-control" placeholder="search" aria-label="search"
@@ -42,13 +45,13 @@
             <!-- buat scroll -->
             <style>
                 .scroll {
-                    height: 600px;
+                    height: 800px;
                     overflow: scroll;
                 }
             </style>
 
             <div class="scroll">
-                <table class="table table-head-fixed text-nowrap text-hover">
+                <table class="table text-nowrap text-hover">
                     <thead>
                         <tr>
                             <th rowspan="3">No.</th>
@@ -56,7 +59,7 @@
                             <th rowspan="3">Jabatan</th>
                             <th colspan="31">POIN EVIDEN</th>
                         </tr>
-                        
+
                         <tr>
                             <th colspan="31">Tanggal 1 s.d. 31</th>
                         </tr>
@@ -182,88 +185,105 @@
                                 <td>{{ $data1->tgl31 }}</td>
 
                                 @php
-                                $tgl1jum += $data1->tgl01;
-                                $tgl2jum += $data1->tgl02;
-                                $tgl3jum += $data1->tgl03;
-                                $tgl4jum += $data1->tgl04;
-                                $tgl5jum += $data1->tgl05;
-                                $tgl6jum += $data1->tgl06;
-                                $tgl7jum += $data1->tgl07;
-                                $tgl8jum += $data1->tgl08;
-                                $tgl9jum += $data1->tgl09;
-                                $tgl10jum += $data1->tgl10;
-                                $tgl11jum += $data1->tgl11;
-                                $tgl12jum += $data1->tgl12;
-                                $tgl13jum += $data1->tgl13;
-                                $tgl14jum += $data1->tgl14;
-                                $tgl15jum += $data1->tgl15;
-                                $tgl16jum += $data1->tgl16;
-                                $tgl17jum += $data1->tgl17;
-                                $tgl18jum += $data1->tgl18;
-                                $tgl19jum += $data1->tgl19;
-                                $tgl20jum += $data1->tgl20;
-                                $tgl21jum += $data1->tgl21;
-                                $tgl22jum += $data1->tgl22;
-                                $tgl23jum += $data1->tgl23;
-                                $tgl24jum += $data1->tgl24;
-                                $tgl25jum += $data1->tgl25;
-                                $tgl26jum += $data1->tgl26;
-                                $tgl27jum += $data1->tgl27;
-                                $tgl28jum += $data1->tgl28;
-                                $tgl29jum += $data1->tgl29;
-                                $tgl30jum += $data1->tgl30;
-                                $tgl31jum += $data1->tgl31;
-                            @endphp
+                                    $tgl1jum += $data1->tgl01;
+                                    $tgl2jum += $data1->tgl02;
+                                    $tgl3jum += $data1->tgl03;
+                                    $tgl4jum += $data1->tgl04;
+                                    $tgl5jum += $data1->tgl05;
+                                    $tgl6jum += $data1->tgl06;
+                                    $tgl7jum += $data1->tgl07;
+                                    $tgl8jum += $data1->tgl08;
+                                    $tgl9jum += $data1->tgl09;
+                                    $tgl10jum += $data1->tgl10;
+                                    $tgl11jum += $data1->tgl11;
+                                    $tgl12jum += $data1->tgl12;
+                                    $tgl13jum += $data1->tgl13;
+                                    $tgl14jum += $data1->tgl14;
+                                    $tgl15jum += $data1->tgl15;
+                                    $tgl16jum += $data1->tgl16;
+                                    $tgl17jum += $data1->tgl17;
+                                    $tgl18jum += $data1->tgl18;
+                                    $tgl19jum += $data1->tgl19;
+                                    $tgl20jum += $data1->tgl20;
+                                    $tgl21jum += $data1->tgl21;
+                                    $tgl22jum += $data1->tgl22;
+                                    $tgl23jum += $data1->tgl23;
+                                    $tgl24jum += $data1->tgl24;
+                                    $tgl25jum += $data1->tgl25;
+                                    $tgl26jum += $data1->tgl26;
+                                    $tgl27jum += $data1->tgl27;
+                                    $tgl28jum += $data1->tgl28;
+                                    $tgl29jum += $data1->tgl29;
+                                    $tgl30jum += $data1->tgl30;
+                                    $tgl31jum += $data1->tgl31;
+                                @endphp
                             </tr>
                         @endforeach
                     </tbody>
                     <tr>
                         <th colspan=3>JUMLAH</th>
-                        <th>{{$tgl1jum}}</th>
-                        <th>{{$tgl2jum}}</th>
-                        <th>{{$tgl3jum}}</th>
-                        <th>{{$tgl4jum}}</th>
-                        <th>{{$tgl5jum}}</th>
-                        <th>{{$tgl6jum}}</th>
-                        <th>{{$tgl7jum}}</th>
-                        <th>{{$tgl8jum}}</th>
-                        <th>{{$tgl9jum}}</th>
-                        <th>{{$tgl10jum}}</th>
-                        <th>{{$tgl11jum}}</th>
-                        <th>{{$tgl12jum}}</th>
-                        <th>{{$tgl13jum}}</th>
-                        <th>{{$tgl14jum}}</th>
-                        <th>{{$tgl15jum}}</th>
-                        <th>{{$tgl16jum}}</th>
-                        <th>{{$tgl17jum}}</th>
-                        <th>{{$tgl18jum}}</th>
-                        <th>{{$tgl19jum}}</th>
-                        <th>{{$tgl20jum}}</th>
-                        <th>{{$tgl21jum}}</th>
-                        <th>{{$tgl22jum}}</th>
-                        <th>{{$tgl23jum}}</th>
-                        <th>{{$tgl24jum}}</th>
-                        <th>{{$tgl25jum}}</th>
-                        <th>{{$tgl26jum}}</th>
-                        <th>{{$tgl27jum}}</th>
-                        <th>{{$tgl28jum}}</th>
-                        <th>{{$tgl29jum}}</th>
-                        <th>{{$tgl30jum}}</th>
-                        <th>{{$tgl31jum}}</th>
+                        <th>{{ $tgl1jum }}</th>
+                        <th>{{ $tgl2jum }}</th>
+                        <th>{{ $tgl3jum }}</th>
+                        <th>{{ $tgl4jum }}</th>
+                        <th>{{ $tgl5jum }}</th>
+                        <th>{{ $tgl6jum }}</th>
+                        <th>{{ $tgl7jum }}</th>
+                        <th>{{ $tgl8jum }}</th>
+                        <th>{{ $tgl9jum }}</th>
+                        <th>{{ $tgl10jum }}</th>
+                        <th>{{ $tgl11jum }}</th>
+                        <th>{{ $tgl12jum }}</th>
+                        <th>{{ $tgl13jum }}</th>
+                        <th>{{ $tgl14jum }}</th>
+                        <th>{{ $tgl15jum }}</th>
+                        <th>{{ $tgl16jum }}</th>
+                        <th>{{ $tgl17jum }}</th>
+                        <th>{{ $tgl18jum }}</th>
+                        <th>{{ $tgl19jum }}</th>
+                        <th>{{ $tgl20jum }}</th>
+                        <th>{{ $tgl21jum }}</th>
+                        <th>{{ $tgl22jum }}</th>
+                        <th>{{ $tgl23jum }}</th>
+                        <th>{{ $tgl24jum }}</th>
+                        <th>{{ $tgl25jum }}</th>
+                        <th>{{ $tgl26jum }}</th>
+                        <th>{{ $tgl27jum }}</th>
+                        <th>{{ $tgl28jum }}</th>
+                        <th>{{ $tgl29jum }}</th>
+                        <th>{{ $tgl30jum }}</th>
+                        <th>{{ $tgl31jum }}</th>
                     </tr>
                 </table>
-            </div>
-            {{-- Start of canvas --}}
-            <canvas id="myChart2" style="width:100%;max-width:800px"></canvas>
+                <style>
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
 
+                    thead {
+                        position: sticky;
+                        top: 0;
+                        background-color: #fff;
+                    }
+                </style>
+            </div>
+
+            {{-- Start of chart --}}
             <script>
-                var xValues = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
-                , "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"
+                var xValues = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18",
+                    "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"
                 ];
-                var yValues = [{{ $tgl1jum }}, {{ $tgl2jum }}, {{ $tgl3jum }}, {{ $tgl4jum }}, {{ $tgl5jum }}, {{ $tgl6jum }}, {{ $tgl7jum }}, {{ $tgl8jum }}, {{ $tgl9jum }}, {{ $tgl10jum }}
-                , {{ $tgl11jum }}, {{ $tgl12jum }}, {{ $tgl13jum }}, {{ $tgl14jum }}, {{ $tgl15jum }}, {{ $tgl16jum }}, {{ $tgl17jum }}, {{ $tgl18jum }}, {{ $tgl19jum }}, {{ $tgl20jum }}, {{ $tgl21jum }}, {{ $tgl22jum }}, {{ $tgl23jum }}, {{ $tgl24jum }}, {{ $tgl25jum }}, {{ $tgl26jum }}, {{ $tgl27jum }}, {{ $tgl28jum }}, {{ $tgl29jum }}, {{ $tgl30jum }}, {{ $tgl31jum }}
+                var yValues = [{{ $tgl1jum }}, {{ $tgl2jum }}, {{ $tgl3jum }}, {{ $tgl4jum }},
+                    {{ $tgl5jum }}, {{ $tgl6jum }}, {{ $tgl7jum }}, {{ $tgl8jum }},
+                    {{ $tgl9jum }}, {{ $tgl10jum }}, {{ $tgl11jum }}, {{ $tgl12jum }},
+                    {{ $tgl13jum }}, {{ $tgl14jum }}, {{ $tgl15jum }}, {{ $tgl16jum }},
+                    {{ $tgl17jum }}, {{ $tgl18jum }}, {{ $tgl19jum }}, {{ $tgl20jum }},
+                    {{ $tgl21jum }}, {{ $tgl22jum }}, {{ $tgl23jum }}, {{ $tgl24jum }},
+                    {{ $tgl25jum }}, {{ $tgl26jum }}, {{ $tgl27jum }}, {{ $tgl28jum }},
+                    {{ $tgl29jum }}, {{ $tgl30jum }}, {{ $tgl31jum }}
                 ];
-                var barColors = ("blue");
+                var barColors = ("green");
 
                 new Chart("myChart2", {
                     type: "bar",
@@ -285,10 +305,17 @@
                     }
                 });
             </script>
-            {{-- end of canvas --}}
+
+            <style>
+                .chart-container {
+                    position: relative;
+                    width: 75%;
+                    /* max-width: 1000px; */
+                }
+            </style>
+            {{-- end of chart --}}
         </div>
     </div>
-</div>
 @endsection
 
 <!-- Dropdown -->

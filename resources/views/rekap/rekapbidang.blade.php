@@ -37,7 +37,7 @@
             </form>
 
             <div class="card-body table-responsive p-0">
-                <table class="table table-bordered text-center">
+                <table class="table text-center">
                     <thead>
                         <tr>
                             <th colspan="42">Tanggal 1 s.d. 31</th>
@@ -84,11 +84,13 @@
                                     <th></th>
                                 </tr>
                     </tbody>
-
                 </table>
             </div>
-            {{-- Start of canvas --}}
-            <canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
+
+            {{-- Start of chart --}}
+            <div class="chart-container">
+                <canvas id="myChart1"></canvas>
+            </div>
 
             <script>
                 var xValues = ["Tanaman / Pemeliharaan / Persemaian", "Keamanan / Patroli", "Sosialisasi / Rapat / Apel",
@@ -117,10 +119,18 @@
                     }
                 });
             </script>
+
+            <style>
+                .chart-container {
+                    position: relative;
+                    width: 100%;
+                    max-width: 700px;
+                }
+            </style>
+            {{-- end of chart --}}
             @endif
             @endforeach
         </div>
-    </div>
     </div>
 @endsection
 

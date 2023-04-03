@@ -34,48 +34,48 @@
                             <div class="mb-3">
                                 <label>Tanaman / Pemeliharaan / Persemaian</label></br>
                                 <input type="checkbox" name="poin12" value="1"> 09.00 - 12.00</br>
-                                <input type="radio" name="poin13" value="1"> 12.00 - 15.00</br>
-                                <input type="radio" name="poin14" value="1"> 15.00 - 18.00</br>
-                                <input type="radio" name="poin15" value="2"> 18.00 - 21.00</br>
-                                <input type="radio" name="poin16" value="2"> 21.00 - 00.00</br>
-                                <input type="radio" name="poin17" value="2"> 00.00 - 03.00</br>
-                                <input type="radio" name="poin18" value="2"> 03.00 - 06.00</br>
+                                <input type="checkbox" name="poin13" value="1"> 12.00 - 15.00</br>
+                                <input type="checkbox" name="poin14" value="1"> 15.00 - 18.00</br>
+                                <input type="checkbox" name="poin15" value="2"> 18.00 - 21.00</br>
+                                <input type="checkbox" name="poin16" value="2"> 21.00 - 00.00</br>
+                                <input type="checkbox" name="poin17" value="2"> 00.00 - 03.00</br>
+                                <input type="checkbox" name="poin18" value="2"> 03.00 - 06.00</br>
                             </div>
 
                             <div class="mb-3">
                                 <label>Keamanan / Patroli</label></br>
-                                <input type="radio" name="poin21" value="1"> 06.00 - 09.00</br>
-                                <input type="radio" name="poin22" value="1"> 09.00 - 12.00</br>
-                                <input type="radio" name="poin23" value="1"> 12.00 - 15.00</br>
-                                <input type="radio" name="poin24" value="1"> 15.00 - 18.00</br>
-                                <input type="radio" name="poin25" value="2"> 18.00 - 21.00</br>
-                                <input type="radio" name="poin26" value="2"> 21.00 - 00.00</br>
-                                <input type="radio" name="poin27" value="2"> 00.00 - 03.00</br>
-                                <input type="radio" name="poin28" value="2"> 03.00 - 06.00</br>
+                                <input type="checkbox" name="poin21" value="1"> 06.00 - 09.00</br>
+                                <input type="checkbox" name="poin22" value="1"> 09.00 - 12.00</br>
+                                <input type="checkbox" name="poin23" value="1"> 12.00 - 15.00</br>
+                                <input type="checkbox" name="poin24" value="1"> 15.00 - 18.00</br>
+                                <input type="checkbox" name="poin25" value="2"> 18.00 - 21.00</br>
+                                <input type="checkbox" name="poin26" value="2"> 21.00 - 00.00</br>
+                                <input type="checkbox" name="poin27" value="2"> 00.00 - 03.00</br>
+                                <input type="checkbox" name="poin28" value="2"> 03.00 - 06.00</br>
                             </div>
 
                             <div class="mb-3">
                                 <label>Sosialisasi / Rapat / Apel</label></br>
-                                <input type="radio" name="poin31" value="1"> 06.00 - 09.00</br>
-                                <input type="radio" name="poin32" value="1"> 09.00 - 12.00</br>
-                                <input type="radio" name="poin33" value="1"> 12.00 - 15.00</br>
-                                <input type="radio" name="poin34" value="1"> 15.00 - 18.00</br>
-                                <input type="radio" name="poin35" value="2"> 18.00 - 21.00</br>
-                                <input type="radio" name="poin36" value="2"> 21.00 - 00.00</br>
-                                <input type="radio" name="poin37" value="2"> 00.00 - 03.00</br>
-                                <input type="radio" name="poin38" value="2"> 03.00 - 06.00</br>
+                                <input type="checkbox" name="poin31" value="1"> 06.00 - 09.00</br>
+                                <input type="checkbox" name="poin32" value="1"> 09.00 - 12.00</br>
+                                <input type="checkbox" name="poin33" value="1"> 12.00 - 15.00</br>
+                                <input type="checkbox" name="poin34" value="1"> 15.00 - 18.00</br>
+                                <input type="checkbox" name="poin35" value="2"> 18.00 - 21.00</br>
+                                <input type="checkbox" name="poin36" value="2"> 21.00 - 00.00</br>
+                                <input type="checkbox" name="poin37" value="2"> 00.00 - 03.00</br>
+                                <input type="checkbox" name="poin38" value="2"> 03.00 - 06.00</br>
                             </div>
 
                             <div class="mb-3">
                                 <label>Produksi / Agroforestry / Wisata</label></br>
-                                <input type="radio" name="poin41" value="1"> 06.00 - 09.00</br>
-                                <input type="radio" name="poin42" value="1"> 09.00 - 12.00</br>
-                                <input type="radio" name="poin43" value="1"> 12.00 - 15.00</br>
-                                <input type="radio" name="poin44" value="1"> 15.00 - 18.00</br>
-                                <input type="radio" name="poin45" value="2"> 18.00 - 21.00</br>
-                                <input type="radio" name="poin46" value="2"> 21.00 - 00.00</br>
-                                <input type="radio" name="poin47" value="2"> 00.00 - 03.00</br>
-                                <input type="radio" name="poin48" value="2"> 03.00 - 06.00</br>
+                                <input type="checkbox" name="poin41" value="1"> 06.00 - 09.00</br>
+                                <input type="checkbox" name="poin42" value="1"> 09.00 - 12.00</br>
+                                <input type="checkbox" name="poin43" value="1"> 12.00 - 15.00</br>
+                                <input type="checkbox" name="poin44" value="1"> 15.00 - 18.00</br>
+                                <input type="checkbox" name="poin45" value="2"> 18.00 - 21.00</br>
+                                <input type="checkbox" name="poin46" value="2"> 21.00 - 00.00</br>
+                                <input type="checkbox" name="poin47" value="2"> 00.00 - 03.00</br>
+                                <input type="checkbox" name="poin48" value="2"> 03.00 - 06.00</br>
                             </div>
                         
                             <div class="mb-3">

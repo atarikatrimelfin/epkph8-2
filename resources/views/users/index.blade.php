@@ -11,7 +11,6 @@
                 <button class="btn btn-outline-primary" type="button" onclick="window.location='{{ route('register') }}'">
                     Tambah User
                 </button>
-                <button class="btn btn-outline-success" type="button">Download Excel</button>
             </h3>
         </div>
         <div class="card-body">

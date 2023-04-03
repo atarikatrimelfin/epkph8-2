@@ -62,7 +62,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function() {
 
 
 Route::group(['middleware' => ['auth', 'ceklevel:admin,user']], function(){
-    Route::get('/dashboard', [NavController::class, 'dashboard'])->name('dashboard');
+    Route::get('/home', [NavController::class, 'dashboard'])->name('dashboard');
     // Route::get('/profile', [NavController::class, 'profile'])->name('profile');
 
     Route ::prefix("profile")->group(function(){

@@ -20,6 +20,6 @@ class CekLevel
         {
             return $next($request);
         }
-        return redirect('/dashboard');
+        return redirect('/home');
     }
 }

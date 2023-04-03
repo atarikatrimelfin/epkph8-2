@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +56,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-light-success elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ ('/dashboard') }}" class="brand-link">
+    <a href="{{ ('/home') }}" class="brand-link">
       <img src="https://1.bp.blogspot.com/-iPBwZjNZRw8/YCoD1genTBI/AAAAAAAAH7o/lRsWaucqH1kTYm-9bxO7u8kKblB80MaKwCLcBGAsYHQ/s2001/logo-perhutani-02.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light"><b>KPH Semarang</b></span>
     </a>
@@ -106,26 +105,6 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery -->
-{{-- <script src="{{ asset('/') }}plugins/jquery/jquery.min.js"></script> --}}
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('/') }}plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('/') }}dist/js/adminlte.js"></script>
-<!-- DataTables -->
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.2/datatables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.5/js/dataTables.buttons.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-{{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script> --}}
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.5/js/buttons.html5.min.js"></script>
-{{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.5/js/buttons.print.min.js"></script> --}}
-<script src="{{ asset('/') }}main.js"></script>
-<!-- Chart -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<!-- Button -->
-
 <!-- Dropdown -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
@@ -139,6 +118,21 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
+
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('/') }}plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('/') }}dist/js/adminlte.js"></script>
+<!-- DataTables -->
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.2/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.5/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.5/js/buttons.html5.min.js"></script>
+<script src="{{ asset('/') }}main.js"></script>
+<!-- Chart -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
 </body>
 </html>

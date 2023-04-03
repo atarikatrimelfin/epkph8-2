@@ -41,7 +41,7 @@ class AuthController extends Controller
             return redirect('/');
         }
         else{
-            return redirect('/dashboard');
+            return redirect('/home');
         }
     }
     public function handle($request, $next)
