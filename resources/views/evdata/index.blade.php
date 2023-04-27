@@ -131,7 +131,9 @@
                                 </td>
 
                                 <td>
-                                    <img class="img-circle" src="{{ $data1->foto }}">
+                                    <a href="{{ asset('storage/uploads/'.$data1->foto) }}" target="_blank" rel="noopener noreferrer">Lihat Foto</a>
+                                    {{-- <img src="{{ asset($data1->foto) }}" width='50' height='50' class="img img-responsive" /> --}}
+                                    {{-- <img class="img-circle" src="{{ $data1->foto }}"> --}}
                                 </td>
 
                                 <td>

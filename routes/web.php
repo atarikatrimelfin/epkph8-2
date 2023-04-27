@@ -58,9 +58,6 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function() {
         Route::get('r/export/', [RekapController::class, 'export'])->name('r.export');
 });
 
-
-
-
 Route::group(['middleware' => ['auth', 'ceklevel:admin,user']], function(){
     Route::get('/home', [NavController::class, 'dashboard'])->name('dashboard');
     // Route::get('/profile', [NavController::class, 'profile'])->name('profile');
@@ -68,7 +65,6 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,user']], function(){
     Route ::prefix("profile")->group(function(){
         Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
     });
-    
     
     Route ::prefix("evdata")->group(function(){
         Route::get('/', [EvdataController::class, 'index'])->name('evdata.index');
@@ -78,10 +74,10 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,user']], function(){
         // Route::post('recycle/{id}', [EvdataController::class, 'recycle'])->name('evdata.recycle');
         // Route::get('restore/{id}', [EvdataController::class, 'restore'])->name('evdata.restore');
     });
-
-    
 });
 
 Route::get('/', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/ceklogin', [AuthController::class, 'ceklogin'])->name('ceklogin');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Route::get('storage/uploads/{filename}', 'FileController@show');

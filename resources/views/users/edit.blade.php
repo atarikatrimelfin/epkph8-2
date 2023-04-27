@@ -18,7 +18,7 @@
             <div class="col-lg-4">
                 <div class="card card-primary mt-5">
                     <div class="card-header">
-                        <strong class="text-center d-block">Form Edit</strong>
+                        <strong class="text-center d-block">Edit Data User</strong>
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{ route('user.update', $data->id) }}">

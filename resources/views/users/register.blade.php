@@ -7,7 +7,7 @@
             <div class="col-lg-4">
                 <div class="card card-primary mt-5">
                     <div class="card-header">
-                        <strong class="text-center d-block">Form Register</strong>
+                        <strong class="text-center d-block">Tambah Data User</strong>
                     </div>
                     <div class="card-body">
                         <form action="/registered" method="POST">
@@ -36,7 +36,7 @@
                                     <option value="WILAYAH BARAT">WILAYAH BARAT</option>
                                     <option value="WILAYAH TIMUR">WILAYAH TIMUR</option>
                                 </select>
-                                <div class="invalid-feedback">Wilayah Harus Dipilih!</div>
+                                {{-- <div class="invalid-feedback">Wilayah Harus Dipilih!</div> --}}
                             </div>
                     </div>
                     <div class="card-footer">

@@ -19,13 +19,14 @@ class EvdataController extends Controller
 
     public function create()
     {
-        
         return view('evdata.add', ['key'=>'evdata']);
     }
 
     public function store(Request $request)
     {
         $request->validate([
+            'id' => 'required',
+
             'poin11' => '',
             'poin12' => '',
             'poin13' => '',
@@ -61,11 +62,35 @@ class EvdataController extends Controller
             'poin46' => '',
             'poin47' => '',
             'poin48' => '',
-
             
-            'foto' => '',
-            'id' => 'required',
+            'foto' => 'required|mimes:jpg,png,jpeg|image|max:2048',
         ]);
+
+        // $bukti =$request->foto;
+        // $namaFile = $bukti->getClientOriginalName();
+
+        //     $dtUpload = new EvdataController;
+        //     $dtUpload->foto = $namaFile;
+
+        if($request->hasFile('foto')) {
+            $path = $request->file('foto')->store('uploads');
+        } else {
+            $path = '';
+        }
+
+        $fileName= time().$request->file('foto')->getClientOriginalName();
+        $path = $request->file('foto')->storeAs('uploads', $fileName);
+        $requestData['foto'] = '/storage/uploads/'.$path;
+        // Evdata::create($requestData);
+
+//         // Mendapatkan URL file foto
+// $url = asset('storage/uploads/' . $request->file('foto')->hashName());
+
+// // Menyimpan URL file foto dalam tabel
+// $bukti = new EvdataController;
+// $bukti->url = $url;
+// $bukti->save();
+
         
         DB::insert('INSERT INTO data_laporan(tanggal, poin11, poin12, poin13, poin14, poin15, poin16, poin17, poin18,
         poin21, poin22, poin23, poin24, poin25, poin26, poin27, poin28,
@@ -75,6 +100,8 @@ class EvdataController extends Controller
         :poin31, :poin32, :poin33, :poin34, :poin35, :poin36, :poin37, :poin38,
         :poin41, :poin42, :poin43, :poin44, :poin45, :poin46, :poin47, :poin48, :foto, :id)',
         [
+            'id' => $request->id,
+
             'tanggal' => $request->tanggal,
             'poin11' => is_null($request->poin11)? '0' : $request->poin11,
             'poin12' => is_null($request->poin12)? '0' : $request->poin12,
@@ -113,8 +140,7 @@ class EvdataController extends Controller
             'poin47' => is_null($request->poin47)? '0' : $request->poin47,
             'poin48' => is_null($request->poin48)? '0' : $request->poin48,
             
-            'foto' => $request->foto,
-            'id' => $request->id,
+            'foto' => $request->foto            
         ]
         );
 

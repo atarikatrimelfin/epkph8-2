@@ -21,7 +21,7 @@
                         <strong class="text-center d-block">Tambah Data Eviden</strong>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('evdata.store') }}">
+                        <form method="post" action="{{ route('evdata.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="id" class="form-label">Nama Karyawan</label>
@@ -80,7 +80,7 @@
                         
                             <div class="mb-3">
                                 <label for="foto" class="form-label">Foto</label>
-                                <input type="file" class="form-inline" id="foto" name="foto">
+                                <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
                             </div>
                     </div>
                     <!-- /.card-body -->

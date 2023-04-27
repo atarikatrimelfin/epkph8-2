@@ -39,7 +39,7 @@
 
                     <div class="col-xl-3 col-md-6">
                         <div class="card bg-info text-white mb-4">
-                            <div class="card-body">Profile</div>
+                            <div class="card-body">Profil</div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
                                 <a class="small text-white stretched-link" href="/profile">View Details</a>
                             </div>
