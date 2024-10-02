@@ -11,14 +11,13 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class HarianController extends Controller
 {
-    public function export(Request $request) 
+    public function export(Request $request)
     {
         return Excel::download(new HarianExport($request->search), 'harian.xlsx');
     }
-    
+
     public function harian(Request $request)
     {
-        // if($request->has('search')){
         if ($request->has('search')) {
             $datas1 = DB::select('SELECT users.nama,
                 users.id,
@@ -66,12 +65,12 @@ class HarianController extends Controller
         SUM(poin41 + poin42 + poin43 + poin44 + poin45 + poin46 + poin47 + poin48) AS jum4
                 FROM `data_laporan`  
                 left join users on users.id = data_laporan.id WHERE data_laporan.tanggal like :search GROUP BY data_laporan.id, users.nama, users.id, users.wilayah, users.jabatan ', [
-                    'search' => '%' . $request->search . '%',
-                ]);
+                'search' => '%' . $request->search . '%',
+            ]);
 
-                Storage::disk('local')->put('file.txt','your content here');
+            Storage::disk('local')->put('file.txt', 'your content here');
 
-                
+
             return view('rekap.harian', ['key' => 'harian'])
                 ->with('datas1', $datas1);
         } else {
@@ -125,7 +124,5 @@ class HarianController extends Controller
             return view('rekap.harian', ['key' => 'harian'])
                 ->with('datas1', $datas1);
         }
-
-        
     }
 }

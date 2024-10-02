@@ -11,15 +11,16 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class RekapBidangController extends Controller
 {
-    public function export(Request $request) 
+    public function export(Request $request)
     {
         return Excel::download(new RekapBidangExport($request->search), 'rekapbidang.xlsx');
     }
 
-    public function rekapbidang(Request $request) 
+    public function rekapbidang(Request $request)
     {
-        if($request->has('search')){
-            $datas1 = DB::select('SELECT
+        if ($request->has('search')) {
+            $datas1 = DB::select(
+                'SELECT
             SUM(poin11 + poin12 + poin13 + poin14 + poin15 + poin16 + poin17 + poin18) AS jum1,
             SUM(poin21 + poin22 + poin23 + poin24 + poin25 + poin26 + poin27 + poin28) AS jum2,
             SUM(poin31 + poin32 + poin33 + poin34 + poin35 + poin36 + poin37 + poin38) AS jum3,
@@ -34,14 +35,13 @@ class RekapBidangController extends Controller
         WHERE MONTH(data_laporan.tanggal) = :search
         GROUP BY MONTH(data_laporan.tanggal)
         ',
-        ['search'=>$request->search] );
-            
-            
-            return view('rekap.rekapbidang', ['key'=>'rekapbidang'])
-            ->with('datas1', $datas1);
-        }
-    
-        else {
+                ['search' => $request->search]
+            );
+
+
+            return view('rekap.rekapbidang', ['key' => 'rekapbidang'])
+                ->with('datas1', $datas1);
+        } else {
             $datas1 = DB::select('SELECT
                 SUM(poin11 + poin12 + poin13 + poin14 + poin15 + poin16 + poin17 + poin18) AS jum1,
                 SUM(poin21 + poin22 + poin23 + poin24 + poin25 + poin26 + poin27 + poin28) AS jum2,
@@ -56,12 +56,9 @@ class RekapBidangController extends Controller
                 `data_laporan`
             WHERE MONTH(data_laporan.tanggal) = 02
             GROUP BY MONTH(data_laporan.tanggal)');
-            
-            // dd($datas1);
-            
-            return view('rekap.rekapbidang', ['key'=>'rekapbidang'])
-            ->with('datas1', $datas1);
+
+            return view('rekap.rekapbidang', ['key' => 'rekapbidang'])
+                ->with('datas1', $datas1);
         }
-    
-}
+    }
 }

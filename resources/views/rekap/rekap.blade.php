@@ -42,7 +42,6 @@
                 </div>
             </form>
 
-            <!-- buat scroll -->
             <style>
                 .scroll {
                     height: 800px;

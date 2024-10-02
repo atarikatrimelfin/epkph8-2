@@ -8,75 +8,22 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-         public function index() {
-
-        // $users = User::paginate(10);
-        $users = User::all();
-        return view('users.index', ['key'=>'user'])
-            ->with('datas', $users)  ;
-
-        // $data = [
-        //     'datas' => User::all(),
-        // ];
-        // return view('users.index', ['key'=>'user']);
-     }
-
-    //  public function search(Request $request){
-
-    //     $search = $request->search;
-
-    //     $users = DB::table('users')
-    //     ->where('nama', 'like', "%".$search."%")
-    //     ->paginate();
-
-    //     return view('users.index', ['key'=>'user'])
-    //         ->with('datas', $users)  ;
-    //     if($request->has('search')){
-    //     $datas = DB::select('select * from users WHERE nama like :search',[
-    //         'search'=>'%'.$request->search.'%',
-    //     ]);
-
-    //     return view('users.index', ['key'=>'user'])
-    //         ->with('datas', $datas);
-    //     }
-    //    else{
-    //     $datas = DB::select('select * from users');
-
-    //     return view('users.index', ['key'=>'user'])
-    //         ->with('datas', $datas);
-    //    }
-    // }
-    
-    public function create()
+    public function index()
     {
-        return view('user.add', ['key'=>'']);
+        $users = User::all();
+        return view('users.index', ['key' => 'user'])->with('datas', $users);
     }
 
-    // public function store(Request $request)
-    // {
-    //     $request->validate([
-    //         'nama' => 'required',
-    //         'nip' => 'required',
-    //         'jabatan' => 'required',
-    //         'wilayah' => 'required',
-    //         'level' => 'required',
-    //     ]);
-        
-    //     User::create($request->all());
-    //     return redirect()->route('user.index')->with('success', 'Data user berhasil ditambahkan');        
-    // }
-
-    // public function show(User $user)
-    // {
-    //     return view('user.detail', compact('user'));
-    // }
+    public function create()
+    {
+        return view('user.add', ['key' => '']);
+    }
 
     public function edit($id)
     {
         $data = DB::table('users')->where('id', $id)->first();
 
-        return view('users.edit', ['key'=>''])->with('data', $data) ;
-        /*return view('users.edit', compact('user'));*/
+        return view('users.edit', ['key' => ''])->with('data', $data);
     }
 
     public function update($id, Request $request)
@@ -88,34 +35,23 @@ class UserController extends Controller
             'wilayah' => 'required',
         ]);
 
-        DB::update('UPDATE users SET nama = :nama, nip = :nip, jabatan = :jabatan, wilayah = :wilayah WHERE id = :id',
-        [
-            'id' => $id,
-            'nama' => $request->nama,
-            'nip' => $request->nip,
-            'jabatan' => $request->jabatan,
-            'wilayah' => $request->wilayah,
-        ]
+        DB::update(
+            'UPDATE users SET nama = :nama, nip = :nip, jabatan = :jabatan, wilayah = :wilayah WHERE id = :id',
+            [
+                'id' => $id,
+                'nama' => $request->nama,
+                'nip' => $request->nip,
+                'jabatan' => $request->jabatan,
+                'wilayah' => $request->wilayah,
+            ]
         );
-        /*
-        $user->update($request->all());*/
+
         return redirect()->route('user.index')->with('success', 'Data user berhasil diperbarui');
     }
 
     public function delete($id)
     {
         DB::delete('DELETE FROM users WHERE id = :id', ['id' => $id]);
-
-        // Menggunakan laravel eloquent
-        // Admin::where('id_pajak', $id)->delete();
-
-        // $user->delete();
         return redirect()->route('user.index')->with('success', 'Data user berhasil dihapus');
     }
-
-    // public function user()
-    // {
-    //     $user = User::paginate(2);
-    //     return view('user', ['key'=>'user', 'user'=>$user]);
-    // }
 }
